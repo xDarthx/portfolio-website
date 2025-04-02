@@ -8,7 +8,7 @@ function App() {
       <nav>
         <div id='myLinks'>
           <a id='selected' href="">Home</a>
-          <a href="">Project</a>
+          <a href="">Projects</a>
           <a href="">About</a>
         </div>
       </nav>
@@ -28,6 +28,35 @@ function App() {
           </p>
         </article>
       </section>
+      <outer className='mainSection'>
+        <div className='projectDiv'>
+          <div class="project-container" id="projects">
+                <div class="project-card">
+                    <img class="project-image" src="public/logo-png.png" alt="Project 1" />
+                    <div class="project-title">Project Title 1</div>
+                </div>
+            
+                <div class="project-card">
+                    <img class="project-image" src="public/logo-png.png" alt="Project 2" />
+                    <div class="project-title">Project Title 2</div>
+                </div>
+
+                <div class="project-card">
+                    <img class="project-image" src="public/logo-png.png" alt="Project 3" />
+                    <div class="project-title">Project Title 3</div>
+                </div>
+
+                <div class="project-card">
+                    <img class="project-image" src="public/logo-png.png" alt="Project 4" />
+                    <div class="project-title">Project Title 4</div>
+                </div>
+
+            </div>
+        </div>
+        <div className='contactDiv'>
+
+        </div>
+      </outer>
     </>
   )
 }

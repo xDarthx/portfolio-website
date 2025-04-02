@@ -11,6 +11,8 @@ body{
   min-width: 320px;
   min-height: 100vh;
   justify-content: center;
+  padding-top: 50vw;
+  overflow-x: hidden;
 }
 
 /* Nav Bar Styles */
@@ -18,8 +20,13 @@ nav{
   padding: 10px;
   position: fixed;
   justify-self: anchor-center;
+  /* Claude Helped identify why the NavBar was having transparency issues */
+  z-index: 1000; /* Add z-index to ensure it stays on top */
+  top: 0; /* Anchor to top */
+  left: 0; /* Ensure it starts from left edge */
 }
 nav #myLinks{
+  box-shadow: 0px 0px 16px 7px rgb(33, 33, 38);
   display: flex;
   gap: 10px;
   flex-direction: row;
@@ -46,7 +53,15 @@ nav #selected{
 
 /* Background Section Styles*/
 .backgroundSection{
+  height: calc(100vh - 300px);
   display: block;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding:20px 5px ;
+  z-index: 1;
+  unicode-bidi: isolate;
 }
 #clock{
   max-width: fit-content;
@@ -59,6 +74,112 @@ nav #selected{
   float: left;
 }
 #aboutMe{
-  margin-top: 30%;
+  margin-top: 15%;
   font-size: 3.2vw;
+}
+#aboutMe h1{
+  font-size: 8vw;
+  background: #FFFFFF;
+  background: linear-gradient(to top right, #FFFFFF 0%, #82B3BE 25%, #278EBE 50%, #097AAF 75%, #020D8C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Main Section Styles*/
+.mainSection{
+  position: relative;
+  z-index: 10;
+  margin-top: 300px;
+  width: 100%;
+}
+
+/* Project Card Styles */
+.projectDiv {
+  min-height: 300px;
+  max-height: fit-content;
+  text-align: center;
+  background-color: black;
+  box-shadow: 0px -20px 20px 20px black;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 20px 0px rgb(60 55 55 / 75%);
+  overflow: hidden;
+  width: 40vw;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: fit-content;
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px;
+  color: #333;
+}
+
+@media (max-width:1070px) {
+  .projectDiv {
+    min-height: 300px;
+    max-height: fit-content;
+    text-align: center;
+    background-color: black;
+    box-shadow: 0px -20px 20px 20px black;
+  }
+  
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .project-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 60vw;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px;
+    color: #333;
+  } 
 }
