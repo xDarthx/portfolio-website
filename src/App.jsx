@@ -1,12 +1,27 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
+  const [lightDark, setLightDark] = useState(false);
   
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
+
+  const toggleLightDark = () => {
+    setLightDark(!lightDark);
+  };
+
+  useEffect(() => {
+    if(lightDark){
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    
+
+  }, [lightDark]);
 
   return (
     <>
@@ -27,9 +42,9 @@ function App() {
       </nav>
       <section className='backgroundSection'>
         <div id='darkLight'>
-          <label class="switch">
-            <input type="checkbox" />
-            <span class="slider round"></span>
+          <label className="switch">
+            <input type="checkbox" onClick={toggleLightDark} />
+            <span className="slider round"></span>
           </label>
         </div>
         <br />
@@ -41,49 +56,49 @@ function App() {
           </p>
         </article>
       </section>
-      <outer className='mainSection'>
+      <section className='mainSection'>
         <div className='projectDiv'>
-          <div class="project-container" id="projects">
-                <div class="project-card">
-                    <img class="project-image" src="public/logo-png.png" alt="Project 1" />
-                    <div class="project-title">Project Title 1</div>
+          <div className="project-container" id="projects">
+                <div className="project-card">
+                    <img className="project-image" src="public/logo-png.png" alt="Project 1" />
+                    <div className="project-title">Project Title 1</div>
                 </div>
             
-                <div class="project-card">
-                    <img class="project-image" src="public/logo-png.png" alt="Project 2" />
-                    <div class="project-title">Project Title 2</div>
+                <div className="project-card">
+                    <img className="project-image" src="public/logo-png.png" alt="Project 2" />
+                    <div className="project-title">Project Title 2</div>
                 </div>
 
-                <div class="project-card">
-                    <img class="project-image" src="public/logo-png.png" alt="Project 3" />
-                    <div class="project-title">Project Title 3</div>
+                <div className="project-card">
+                    <img className="project-image" src="public/logo-png.png" alt="Project 3" />
+                    <div className="project-title">Project Title 3</div>
                 </div>
 
-                <div class="project-card">
-                    <img class="project-image" src="public/logo-png.png" alt="Project 4" />
-                    <div class="project-title">Project Title 4</div>
+                <div className="project-card">
+                    <img className="project-image" src="public/logo-png.png" alt="Project 4" />
+                    <div className="project-title">Project Title 4</div>
                 </div>
             </div>
         </div>
         <div className='contactDiv'>
-          <div class="textInfo">
+          <div className="textInfo">
               <h1>Contact Me</h1>
-              <a href="jacob.grant@my.okcu.edu" target="_blank" class="mediaIcons" >
+              <a href="jacob.grant@my.okcu.edu" target="_blank" className="mediaIcons" >
                 <p>jacob.grant@my.okcu.edu</p>
               </a>
               <h3>Socials</h3>
-              <a href="https://www.linkedin.com/in/jacob-grant-7b0710290/" target="_blank" class="mediaIcons" >
-                  <i class="fab fa-linkedin fa-5x"></i>
+              <a href="https://www.linkedin.com/in/jacob-grant-7b0710290/" target="_blank" className="mediaIcons" >
+                  <i className="fab fa-linkedin fa-5x"></i>
               </a>
-              <a href="https://github.com/xDarthx" class="mediaIcons" target="_blank" >
-                  <i class="fab fa-github fa-5x"></i>
+              <a href="https://github.com/xDarthx" className="mediaIcons" target="_blank" >
+                  <i className="fab fa-github fa-5x"></i>
               </a>
-              <a href="https://www.instagram.com/jacob.av7/" class="mediaIcons" target="_blank" >
-                  <i class="fab fa-instagram fa-5x"></i>
+              <a href="https://www.instagram.com/jacob.av7/" className="mediaIcons" target="_blank" >
+                  <i className="fab fa-instagram fa-5x"></i>
               </a>
           </div>
         </div>
-      </outer>
+      </section>
     </>
   )
 }

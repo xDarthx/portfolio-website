@@ -1,12 +1,32 @@
+:root {
+  /* Light theme variables (default) */
+  --bg-primary: black;
+  --bg-secondary: #111827;
+  --text-primary: aliceblue;
+  --text-secondary: #4b5563;
+  --accent: #3b82f6;
+  --border: #e5e7eb;
+}
+
+/* Dark theme variables */
+[data-theme='light'] {
+  --bg-primary: #f3f4f6;
+  --bg-secondary: #cfcfd0;;
+  --text-primary: #1f2937;
+  --text-secondary: #ffffff;
+  --accent: #60a5fa;
+  --border: #374151;
+}
+
 * {
   font-family: monospace;
-  color: aliceblue;
+  color: var(--text-primary);
   padding: 0;
   margin: 0;
 }
 
 body{
-  background-color: black;
+  background-color: var(--bg-primary);
   display: flex;
   min-width: 320px;
   min-height: 100vh;
@@ -20,7 +40,7 @@ body{
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background-color: #000000;
+  background-color: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
   background: rgb(65, 65, 65); 
@@ -77,7 +97,7 @@ nav #selected{
 .hamburger-icon div {
   width: 25px;
   height: 3px;
-  background-color: aliceblue;
+  background-color: var(--text-primary);
   margin: 5px 0;
   transition: 0.4s;
 }
@@ -105,8 +125,7 @@ nav #selected{
 }
 #aboutMe h1{
   font-size: 8vw;
-  background: #FFFFFF;
-  background: linear-gradient(to top right, #FFFFFF 0%, #82B3BE 25%, #278EBE 50%, #097AAF 75%, #020D8C 100%);
+  background: linear-gradient(to top right, var(--text-primary) 0%, #82B3BE 25%, #278EBE 50%, #097AAF 75%, #020D8C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -152,7 +171,7 @@ nav #selected{
   transition: .4s;
 }
 input:checked + .slider {
-  background-color: #f8f8f8;
+  background-color: #b1afaf;
 }
 input:checked + .slider:before {
   background-color: #292929;
@@ -179,8 +198,8 @@ input:checked + .slider:before {
   min-height: 300px;
   max-height: fit-content;
   text-align: center;
-  background-color: black;
-  box-shadow: 0px -20px 20px 20px black;
+  background-color: var(--bg-primary);
+  box-shadow: 0px -20px 20px 20px var(--bg-primary);
 }
 
 .project-container {
@@ -192,7 +211,7 @@ input:checked + .slider:before {
 }
 
 .project-card {
-  background: #ffffff;
+  background: var(--text-primary);
   border-radius: 10px;
   box-shadow: 0px 3px 20px 0px rgb(60 55 55 / 75%);
   overflow: hidden;
@@ -217,7 +236,7 @@ input:checked + .slider:before {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 15px;
-  color: #333;
+  color: var(--text-secondary);
 }
 
 /* Contact Div Styles*/
@@ -226,10 +245,10 @@ input:checked + .slider:before {
   min-height: 300px;
   max-height: fit-content;
   text-align: center;
-  background-color: black;
+  background-color: var(--bg-primary);
 }
 .textInfo{
-  background-color: black;
+  background-color: var(--bg-primary);
   font-size: 2.5vw;
   border-top: 2px solid currentColor;
   padding-top: 15px;
@@ -250,8 +269,8 @@ input:checked + .slider:before {
     min-height: 300px;
     max-height: fit-content;
     text-align: center;
-    background-color: black;
-    box-shadow: 0px -20px 20px 20px black;
+    background-color: var(--bg-primary);
+    box-shadow: 0px -20px 20px 20px var(--bg-primary);
   }
   
   .project-container {
@@ -263,7 +282,7 @@ input:checked + .slider:before {
   }
   
   .project-card {
-    background: #ffffff;
+    background: var(--text-primary);
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -287,7 +306,7 @@ input:checked + .slider:before {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 15px;
-    color: #333;
+    color: var(--text-secondary);
   } 
 
   nav #myLinks {
