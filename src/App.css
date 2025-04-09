@@ -31,7 +31,6 @@ body{
   min-width: 320px;
   min-height: 100vh;
   justify-content: center;
-  padding-top: 60vw;
   overflow-x: hidden;
 }
 
@@ -61,6 +60,8 @@ nav{
   left: 0; /* Ensure it starts from left edge */
 }
 nav #myLinks{
+  flex-shrink: calc(100vh - 300px);
+  flex-grow: calc(100vh - 300px);
   box-shadow: 0px 0px 16px 7px rgb(33, 33, 38);
   display: flex;
   gap: 10px;
@@ -185,12 +186,43 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Main Section Styles*/
+/* Main Section Styles For Main Page*/
 .mainSection{
   position: relative;
   z-index: 10;
-  margin-top: 300px;
+  margin-top: 100vw;
   width: 100%;
+}
+
+/* Main Section Styles For Project and About Page*/
+.mainSection2{
+  position: relative;
+  margin-top: 5vw;
+  z-index: 10;
+  width: 100%;
+}
+
+/* About Me Styles*/
+.aboutMeDiv {
+  padding: 5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 300px;
+  max-height: fit-content;
+  font-size: 1.2vw;
+  text-align: center;
+  background-color: var(--bg-primary);
+  box-shadow: 0px -20px 20px 20px var(--bg-primary);
+}
+
+.aboutMeDiv #profileImg {
+  min-width: 2vw;
+  max-width: 15vw;
+  min-height: max-content;
+  border-radius: 100%;
+  flex-shrink: 0;
+  box-shadow: 0px 4px 20px var(--text-secondary);
 }
 
 /* Project Card Styles */
