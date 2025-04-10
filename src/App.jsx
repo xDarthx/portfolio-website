@@ -23,16 +23,6 @@ function App() {
 
   }, [lightDark]);
 
-    // useEffect(() => {
-    //   if(pageState === 'aboutPage'){
-    //     document.documentElement.setAttribute('data-page', 'about');
-    //   } else if(pageState === 'projectPage'){
-    //     document.documentElement.setAttribute('data-page', 'project');
-    //   } else {
-    //     document.documentElement.setAttribute('data-page', 'main');
-    //   }
-    // }, [pageState]);
-
   return (
     <>
       {pageState === 'mainPage' && (
@@ -42,6 +32,12 @@ function App() {
               <a id='selected' href="">Home</a>
               <a onClick={() => setPageState('projectPage')}>Projects</a>
               <a onClick={() => setPageState('aboutPage')}>About</a>
+              <div id='darkLight'>
+                <label className="switch">
+                  <input type="checkbox" checked={lightDark} onChange={toggleLightDark} />
+                  <span className="slider round"></span>
+                </label>
+              </div>
             </div>
             <div 
               className={`hamburger-icon ${menuActive ? 'active' : ''}`} 
@@ -53,12 +49,6 @@ function App() {
             </div>
           </nav>
           <section className='backgroundSection'>
-            <div id='darkLight'>
-              <label className="switch">
-                <input type="checkbox" onClick={toggleLightDark} />
-                <span className="slider round"></span>
-              </label>
-            </div>
             <br />
             <article id='aboutMe'>
               <h1>Jacob Grant</h1>
@@ -72,23 +62,13 @@ function App() {
             <div className='projectDiv'>
               <div className="project-container" id="projects">
                     <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 1" />
-                        <div className="project-title">Project Title 1</div>
+                        <video className="project-image" src="src/assets/battleshipProject.mp4" alt="Project 1" autoPlay loop muted/>
+                        <div className="project-title">BattleShip Project</div>
                     </div>
                 
                     <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 2" />
-                        <div className="project-title">Project Title 2</div>
-                    </div>
-
-                    <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 3" />
-                        <div className="project-title">Project Title 3</div>
-                    </div>
-
-                    <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 4" />
-                        <div className="project-title">Project Title 4</div>
+                        <video className="project-image" src="src/assets/memoryProject.mp4" alt="Project 2" autoPlay loop muted/>
+                        <div className="project-title">Memory Game Project</div>
                     </div>
                 </div>
             </div>
@@ -120,6 +100,12 @@ function App() {
               <a  onClick={() => setPageState('mainPage')}>Home</a>
               <a id='selected'>Projects</a>
               <a onClick={() => setPageState('aboutPage')}>About</a>
+              <div id='darkLight'>
+                <label className="switch">
+                  <input type="checkbox" checked={lightDark} onChange={toggleLightDark} />
+                  <span className="slider round"></span>
+                </label>
+              </div>
             </div>
             <div 
               className={`hamburger-icon ${menuActive ? 'active' : ''}`} 
@@ -131,12 +117,6 @@ function App() {
             </div>
           </nav>
           <section className='mainSection2'>
-            <div id='darkLight'>
-              <label className="switch">
-                <input type="checkbox" onClick={toggleLightDark} />
-                <span className="slider round"></span>
-              </label>
-            </div>
             <div className='projectDiv'>
               <div className="project-container" id="projects">
                     <div className="project-card">
@@ -198,6 +178,12 @@ function App() {
               <a onClick={() => setPageState('mainPage')}>Home</a>
               <a onClick={() => setPageState('projectPage')}>Projects</a>
               <a id='selected'>About</a>
+              <div id='darkLight'>
+                <label className="switch">
+                  <input type="checkbox" checked={lightDark} onChange={toggleLightDark} />
+                  <span className="slider round"></span>
+                </label>
+              </div>
             </div>
             <div 
               className={`hamburger-icon ${menuActive ? 'active' : ''}`} 
@@ -209,12 +195,6 @@ function App() {
             </div>
           </nav>
           <section className='mainSection2'>
-            <div id='darkLight'>
-              <label className="switch">
-                <input type="checkbox" onClick={toggleLightDark} />
-                <span className="slider round"></span>
-              </label>
-            </div>
             <div className='aboutMeDiv'>
               <img id='profileImg' src='src/assets/jacobGrant.jpg'/>
               <article>
@@ -222,15 +202,15 @@ function App() {
                   I am a Sophmore at <b>Oklahoma City University</b>,
                   <br />
                   <br />
-                  and I am currently studying for a bachelors in Computer Science with hopefully a minor in Cybersecurity.
+                  and I am currently studying for a bachelors in Computer Science with a Cybersecurity minor.
                   I love computers and programming so much, ive made it apart of my life even when I was a kid. 
-                  I started out making games on the MIT app inventor back in 8th grade and my passion just grew from there!
+                  I started out making games on the MIT app inventor back in 8th grade, and my passion just grew from there!
                   <br/>
                   <br/>
-                  Video games have also been a big reason why I wanted to get into computer science due to modding and 
-                  me wanting to make my own someday. I guess I got good at video games at one point because I got picked up
+                  Video games have also been a big reason why I wanted to get into Computer Science due to modding and 
+                  me wanting to make my own video game someday. I got good at video games at one point because I got picked up
                   by our <b>Esports Program</b> and was put on the varsity team my Freshman year. Now I am the team captain of our
-                  Varsity Valorant team and I am the technical Director of our <b>Student Leadership Team</b>.
+                  Varsity Valorant Team and I am the Technical Director of our <b>Student Leadership Team</b>.
                   <br/>
                   <br />
                   Overall I love computers and im always wanting to learn new things about them!
