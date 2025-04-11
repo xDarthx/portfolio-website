@@ -62,12 +62,12 @@ function App() {
             <div className='projectDiv'>
               <div className="project-container" id="projects">
                     <div className="project-card">
-                        <video className="project-image" src="src/assets/battleshipProject.mp4" alt="Project 1" autoPlay loop muted/>
+                        <video className="project-image" src="./battleshipProject.mp4" alt="Project 1" autoPlay loop muted/>
                         <div className="project-title">BattleShip Project</div>
                     </div>
                 
                     <div className="project-card">
-                        <video className="project-image" src="src/assets/memoryProject.mp4" alt="Project 2" autoPlay loop muted/>
+                        <video className="project-image" src="./memoryProject.mp4" alt="Project 2" autoPlay loop muted/>
                         <div className="project-title">Memory Game Project</div>
                     </div>
                 </div>
@@ -120,32 +120,32 @@ function App() {
             <div className='projectDiv'>
               <div className="project-container" id="projects">
                     <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 1" />
+                        <img className="project-image" src="./logo-png.png" alt="Project 1" />
                         <div className="project-title">Project Title 1</div>
                     </div>
                 
                     <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 2" />
+                        <img className="project-image" src="./logo-png.png" alt="Project 2" />
                         <div className="project-title">Project Title 2</div>
                     </div>
 
                     <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 3" />
+                        <img className="project-image" src="./logo-png.png" alt="Project 3" />
                         <div className="project-title">Project Title 3</div>
                     </div>
 
                     <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 4" />
+                        <img className="project-image" src="./logo-png.png" alt="Project 4" />
                         <div className="project-title">Project Title 4</div>
                     </div>
 
                     <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 5" />
+                        <img className="project-image" src="./logo-png.png" alt="Project 5" />
                         <div className="project-title">Project Title 5</div>
                     </div>
 
                     <div className="project-card">
-                        <img className="project-image" src="public/logo-png.png" alt="Project 6" />
+                        <img className="project-image" src="./logo-png.png" alt="Project 6" />
                         <div className="project-title">Project Title 6</div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@ function App() {
           </nav>
           <section className='mainSection2'>
             <div className='aboutMeDiv'>
-              <img id='profileImg' src='src/assets/jacobGrant.jpg'/>
+              <img id='profileImg' src='./jacobGrant.jpg'/>
               <article>
                 <p>
                   I am a Sophmore at <b>Oklahoma City University</b>,
