@@ -302,6 +302,11 @@ input:checked + .slider:before {
   margin: 5px;
 }
 
+.textInfo svg{
+  width: 10vw;
+  height: fit-content;
+}
+
 @media (max-width:1070px) {
   .aboutMeDiv {
     padding: 5vw;

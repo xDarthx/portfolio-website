@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Github, X, ChevronRight, Linkedin, Instagram } from 'lucide-react';
 import './App.css'
 
 function App() {
@@ -80,13 +81,13 @@ function App() {
                   </a>
                   <h3>Socials</h3>
                   <a href="https://www.linkedin.com/in/jacob-grant-7b0710290/" target="_blank" className="mediaIcons" >
-                      <i className="fab fa-linkedin fa-5x"></i>
+                    <Linkedin />
                   </a>
                   <a href="https://github.com/xDarthx" className="mediaIcons" target="_blank" >
-                      <i className="fab fa-github fa-5x"></i>
+                    <Github/>
                   </a>
                   <a href="https://www.instagram.com/jacob.av7/" className="mediaIcons" target="_blank" >
-                      <i className="fab fa-instagram fa-5x"></i>
+                    <Instagram />
                   </a>
               </div>
             </div>
@@ -120,13 +121,13 @@ function App() {
             <div className='projectDiv'>
               <div className="project-container" id="projects">
                     <div className="project-card">
-                        <img className="project-image" src="./logo-png.png" alt="Project 1" />
-                        <div className="project-title">Project Title 1</div>
+                        <video className="project-image" src="./battleshipProject.mp4" alt="Project 1" autoPlay loop muted/>
+                        <div className="project-title">BattleShip Project</div>
                     </div>
                 
                     <div className="project-card">
-                        <img className="project-image" src="./logo-png.png" alt="Project 2" />
-                        <div className="project-title">Project Title 2</div>
+                        <video className="project-image" src="./memoryProject.mp4" alt="Project 2" autoPlay loop muted/>
+                        <div className="project-title">Memory Game Project</div>
                     </div>
 
                     <div className="project-card">
@@ -158,13 +159,13 @@ function App() {
                   </a>
                   <h3>Socials</h3>
                   <a href="https://www.linkedin.com/in/jacob-grant-7b0710290/" target="_blank" className="mediaIcons" >
-                      <i className="fab fa-linkedin fa-5x"></i>
+                    <Linkedin />
                   </a>
                   <a href="https://github.com/xDarthx" className="mediaIcons" target="_blank" >
-                      <i className="fab fa-github fa-5x"></i>
+                    <Github/>
                   </a>
                   <a href="https://www.instagram.com/jacob.av7/" className="mediaIcons" target="_blank" >
-                      <i className="fab fa-instagram fa-5x"></i>
+                    <Instagram />
                   </a>
               </div>
             </div>
@@ -225,13 +226,13 @@ function App() {
                   </a>
                   <h3>Socials</h3>
                   <a href="https://www.linkedin.com/in/jacob-grant-7b0710290/" target="_blank" className="mediaIcons" >
-                      <i className="fab fa-linkedin fa-5x"></i>
+                    <Linkedin />
                   </a>
                   <a href="https://github.com/xDarthx" className="mediaIcons" target="_blank" >
-                      <i className="fab fa-github fa-5x"></i>
+                    <Github/>
                   </a>
                   <a href="https://www.instagram.com/jacob.av7/" className="mediaIcons" target="_blank" >
-                      <i className="fab fa-instagram fa-5x"></i>
+                    <Instagram />
                   </a>
               </div>
             </div>
