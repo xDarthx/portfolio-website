@@ -3,10 +3,59 @@ import { Github, X, ChevronRight, Linkedin, Instagram } from 'lucide-react';
 import './App.css'
 
 function App() {
+  const projects = 
+  [
+    {
+      id: 1,
+      title: "BattleShip",
+      fullDesc: "This project implements the well known boardgame battleship. It uses react and Javascript to create a PvP version and a PvE version. The gameboard was done by AI because this was an assignment by my professor. He wanted to challenge us to work with AI but also see why they need human interaction still.",
+      githubUrl: "https://github.com/xDarthx/battleship-react-app",
+      videoSrc: "./battleshipProject.mp4"
+    },
+    {
+      id: 2,
+      title: "Memory Game",
+      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
+      githubUrl: "https://github.com/xDarthx/react-memory-game",
+      videoSrc: "./memoryProject.mp4"
+    },
+    {
+      id: 3,
+      title: "Memory Game",
+      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
+      githubUrl: "https://github.com/xDarthx/react-memory-game",
+      videoSrc: "./memoryProject.mp4"
+    },
+    {
+      id: 4,
+      title: "Memory Game",
+      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
+      githubUrl: "https://github.com/xDarthx/react-memory-game",
+      videoSrc: "./memoryProject.mp4"
+    },
+    {
+      id: 5,
+      title: "Memory Game",
+      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
+      githubUrl: "https://github.com/xDarthx/react-memory-game",
+      videoSrc: "./memoryProject.mp4"
+    },
+    {
+      id: 6,
+      title: "Memory Game",
+      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
+      githubUrl: "https://github.com/xDarthx/react-memory-game",
+      videoSrc: "./memoryProject.mp4"
+    }
+  ]
+
   const [menuActive, setMenuActive] = useState(false);
   const [lightDark, setLightDark] = useState(false);
   const [pageState, setPageState] = useState('mainPage'); //states are mainPage, projectPage, and aboutPage
-  
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
@@ -23,6 +72,70 @@ function App() {
     }
 
   }, [lightDark]);
+
+  const openProjectDetails = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setIsClosing(false);
+    }, 600);
+  };
+
+  function ProjectCard({ project, onClick}) {
+    return(
+      <div className="project-card" onClick={onClick}>
+        <video className="project-image" src={project.videoSrc} autoPlay loop muted/>
+        <div className="project-title">{project.title}</div>
+      </div>
+    )
+  };
+
+  function ProjectModal({ project, onClose, isClosing }) {
+    return (
+      <>
+        <div 
+          className={`modal-backdrop ${isClosing ? 'closing' : ''}`}
+          onClick={onClose}
+        >
+          <div 
+            className={`modal-content ${isClosing ? 'closing' : ''}`}
+            onClick={e => e.stopPropagation()}
+          >
+             <button 
+              className="modal-close-btn"
+              onClick={onClose}
+            >
+              <X size={24} />
+            </button>
+            <div className="modal-body">
+              <h2 className="modal-title">{project.title}</h2>
+              <div className="modal-video-container">
+                <video className="modal-video" src={project.videoSrc} autoPlay loop muted/>
+              </div>
+              <div className="modal-description">
+                <h3 className="modal-subtitle">About this project</h3>
+                <p>{project.fullDesc}</p>
+              </div>
+              <a 
+                href={project.githubUrl} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-link"
+              >
+                <Github size={20} className="github-icon" />
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -62,16 +175,21 @@ function App() {
           <section className='mainSection'>
             <div className='projectDiv'>
               <div className="project-container" id="projects">
-                    <div className="project-card">
-                        <video className="project-image" src="./battleshipProject.mp4" alt="Project 1" autoPlay loop muted/>
-                        <div className="project-title">BattleShip Project</div>
-                    </div>
-                
-                    <div className="project-card">
-                        <video className="project-image" src="./memoryProject.mp4" alt="Project 2" autoPlay loop muted/>
-                        <div className="project-title">Memory Game Project</div>
-                    </div>
-                </div>
+                {projects.slice(0,2).map(project => (
+                  <ProjectCard 
+                    key={project.id} 
+                    project={project} 
+                    onClick={() => openProjectDetails(project)} 
+                  />
+                ))}
+              </div>
+              {isModalOpen && selectedProject && (
+                <ProjectModal 
+                  project={selectedProject} 
+                  onClose={closeModal}
+                  isClosing={isClosing}
+                />
+              )}
             </div>
             <div className='contactDiv'>
               <div className="textInfo">
@@ -120,36 +238,21 @@ function App() {
           <section className='mainSection2'>
             <div className='projectDiv'>
               <div className="project-container" id="projects">
-                    <div className="project-card">
-                        <video className="project-image" src="./battleshipProject.mp4" alt="Project 1" autoPlay loop muted/>
-                        <div className="project-title">BattleShip Project</div>
-                    </div>
-                
-                    <div className="project-card">
-                        <video className="project-image" src="./memoryProject.mp4" alt="Project 2" autoPlay loop muted/>
-                        <div className="project-title">Memory Game Project</div>
-                    </div>
-
-                    <div className="project-card">
-                        <img className="project-image" src="./logo-png.png" alt="Project 3" />
-                        <div className="project-title">Project Title 3</div>
-                    </div>
-
-                    <div className="project-card">
-                        <img className="project-image" src="./logo-png.png" alt="Project 4" />
-                        <div className="project-title">Project Title 4</div>
-                    </div>
-
-                    <div className="project-card">
-                        <img className="project-image" src="./logo-png.png" alt="Project 5" />
-                        <div className="project-title">Project Title 5</div>
-                    </div>
-
-                    <div className="project-card">
-                        <img className="project-image" src="./logo-png.png" alt="Project 6" />
-                        <div className="project-title">Project Title 6</div>
-                    </div>
-                </div>
+                {projects.map(project => (
+                  <ProjectCard 
+                    key={project.id} 
+                    project={project} 
+                    onClick={() => openProjectDetails(project)} 
+                  />
+                ))}
+              </div>
+              {isModalOpen && selectedProject && (
+                <ProjectModal 
+                  project={selectedProject} 
+                  onClose={closeModal}
+                  isClosing={isClosing}
+                />
+              )}
             </div>
             <div className='contactDiv'>
               <div className="textInfo">
