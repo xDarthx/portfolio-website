@@ -10,42 +10,42 @@ function App() {
       title: "BattleShip",
       fullDesc: "This project implements the well known boardgame battleship. It uses react and Javascript to create a PvP version and a PvE version. The gameboard was done by AI because this was an assignment by my professor. He wanted to challenge us to work with AI but also see why they need human interaction still.",
       githubUrl: "https://github.com/xDarthx/battleship-react-app",
-      videoSrc: "./battleshipProject.mp4"
+      videoSrc: "./public/battleshipProject.gif"
     },
     {
       id: 2,
       title: "Memory Game",
       fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
       githubUrl: "https://github.com/xDarthx/react-memory-game",
-      videoSrc: "./memoryProject.mp4"
+      videoSrc: "./public//memoryProject.gif"
     },
     {
       id: 3,
-      title: "Memory Game",
-      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
-      githubUrl: "https://github.com/xDarthx/react-memory-game",
-      videoSrc: "./memoryProject.mp4"
+      title: "Homepage Template",
+      fullDesc: "This project is a template for resumes, it was a project on Odin-Project. This project uses CSS and HTML with a tiny bit of javascript. The main thing for this website is just for it to be a template for resume websites.",
+      githubUrl: "https://github.com/xDarthx/homepage-project",
+      videoSrc: "./public/homepageProject.gif"
     },
     {
       id: 4,
-      title: "Memory Game",
-      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
-      githubUrl: "https://github.com/xDarthx/react-memory-game",
-      videoSrc: "./memoryProject.mp4"
+      title: "Platformer Game",
+      fullDesc: "This was a team project in my game programming class. Each member of the team was tasked with creating a level, the gif only shows the level I created. The game was made using Unity and I helped create the interaction feature and the attack system.",
+      githubUrl: "https://github.com/xDarthx/GameDev_TP1",
+      videoSrc: "./public/teamPlatformerProject.gif"
     },
     {
       id: 5,
-      title: "Memory Game",
-      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
-      githubUrl: "https://github.com/xDarthx/react-memory-game",
-      videoSrc: "./memoryProject.mp4"
+      title: "Placeholder",
+      fullDesc: "This is a placeholder for another project",
+      githubUrl: "",
+      videoSrc: ""
     },
     {
       id: 6,
-      title: "Memory Game",
-      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
-      githubUrl: "https://github.com/xDarthx/react-memory-game",
-      videoSrc: "./memoryProject.mp4"
+      title: "Placeholder",
+      fullDesc: "This is a placeholder for another project",
+      githubUrl: "",
+      videoSrc: ""
     }
   ]
 
@@ -89,7 +89,11 @@ function App() {
   function ProjectCard({ project, onClick}) {
     return(
       <div className="project-card" onClick={onClick}>
-        <video className="project-image" src={project.videoSrc} autoPlay loop muted/>
+        <img 
+        className="project-image" 
+        src={project.videoSrc} 
+        alt={project.title}
+        />
         <div className="project-title">{project.title}</div>
       </div>
     )
@@ -115,7 +119,7 @@ function App() {
             <div className="modal-body">
               <h2 className="modal-title">{project.title}</h2>
               <div className="modal-video-container">
-                <video className="modal-video" src={project.videoSrc} autoPlay loop muted/>
+              <img className="modal-video" src={project.videoSrc} alt={`${project.title} demonstration`} />
               </div>
               <div className="modal-description">
                 <h3 className="modal-subtitle">About this project</h3>
