@@ -632,4 +632,8 @@ input:checked + .slider:before {
     color: var(--text-primary);
     font-size: 3vw;
   }
+
+  .hidden {
+    display: none;
+  }
 }
