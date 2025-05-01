@@ -230,6 +230,65 @@ input:checked + .slider:before {
   box-shadow: 0px 4px 20px var(--text-secondary);
 }
 
+/* Technologies Section Styles */
+.technologiesDiv {
+  padding: 2vw 5vw;
+  background-color: var(--bg-primary);
+  cursor: default;
+  text-align: center;
+}
+
+.technologiesDiv h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: var(--text-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tech-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tech-item {
+  width: 100%;
+}
+
+.tech-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.tech-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.tech-proficiency {
+  font-size: 1.2rem;
+}
+
+.tech-bar-bg {
+  width: 100%;
+  height: 12px;
+  background-color: var(--tech-bar-bg);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tech-bar-fill {
+  height: 100%;
+  background-color: var(--tech-bar-fill);
+  border-radius: 6px;
+  transition: width 1.5s ease-in-out;
+}
+
 /* Project Card Styles */
 .projectDiv {
   min-width: 100vw;

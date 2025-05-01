@@ -49,6 +49,16 @@ function App() {
     }
   ]
 
+  const technologies = [
+    { name: "HTML & CSS", icon: "html5.svg", proficiency: 90 },
+    { name: "JavaScript", icon: "javascript.svg", proficiency: 85 },
+    { name: "Java", icon: "java.svg", proficiency: 85 },
+    { name: "C#", icon: "csharp.svg", proficiency: 80 },
+    { name: "React", icon: "react.svg", proficiency: 80 },
+    { name: "SQL", icon: "sql.svg", proficiency: 70},
+    { name: "C++", icon: "cpp.svg", proficiency: 65 }
+  ];
+
   const [menuActive, setMenuActive] = useState(false);
   const [lightDark, setLightDark] = useState(false);
   const [pageState, setPageState] = useState('mainPage'); //states are mainPage, projectPage, and aboutPage
@@ -138,6 +148,29 @@ function App() {
           </div>
         </div>
       </>
+    );
+  }
+
+  function TechnologyItem({ tech }) {
+    const iconId = tech.icon.replace('.svg', '');
+
+    return (
+      <div className="tech-item">
+        <div className="tech-header">
+          {/* The icons was cool but it was too much of a pain to remake the svg file */}
+          {/* <svg width="50" height="50">
+            <use href={`./technology-icons.svg#${iconId}`} />
+          </svg> */}
+          <div className="tech-name">{tech.name}</div>
+          <div className="tech-proficiency">{tech.proficiency}%</div>
+        </div>
+        <div className="tech-bar-bg">
+          <div 
+            className="tech-bar-fill" 
+            style={{ width: `${tech.proficiency}%` }}
+          ></div>
+        </div>
+      </div>
     );
   }
 
@@ -324,6 +357,14 @@ function App() {
                   Overall I love computers and im always wanting to learn new things about them!
                 </p>
               </article>
+            </div>
+            <div className='technologiesDiv'>
+              <h2>Technologies I Know</h2>
+              <div className="tech-container">
+                {technologies.map((tech, index) => (
+                  <TechnologyItem key={index} tech={tech} />
+                ))}
+              </div>
             </div>
             <div className='contactDiv'>
               <div className="textInfo">
