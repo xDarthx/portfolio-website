@@ -82,6 +82,13 @@ function App() {
     }, 600);
   };
 
+  const scrollToContent = () => {
+    const contentSection = document.querySelector('.mainSection');
+    if (contentSection) {
+      contentSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   function ProjectCard({ project, onClick}) {
     return(
       <div className="project-card" onClick={onClick}>
@@ -190,6 +197,26 @@ function App() {
                 I am studying for a bachelors in computer science and minor in cybersecurity.
               </p>
             </article>
+            <div className="scroll-indicator" onClick={scrollToContent}>
+              <svg width="40" height="60" viewBox="0 0 40 60" className="arrow-svg">
+                <path 
+                  className="arrow-path arrow-path-1" 
+                  d="M20 15 L5 30 L20 45" 
+                  fill="none" 
+                  stroke="var(--text-primary)" 
+                  strokeWidth="3" 
+                  strokeLinecap="round"
+                />
+                <path 
+                  className="arrow-path arrow-path-2" 
+                  d="M35 15 L20 30 L35 45" 
+                  fill="none" 
+                  stroke="var(--text-primary)" 
+                  strokeWidth="3" 
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
           </section>
           <section className='mainSection'>
             <div className='projectDiv'>

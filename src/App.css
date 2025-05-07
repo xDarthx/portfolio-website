@@ -8,6 +8,10 @@
   --border: #e5e7eb;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Dark theme variables */
 [data-theme='light'] {
   --bg-primary: #f3f4f6;
@@ -132,6 +136,55 @@ nav #selected{
   background: linear-gradient(to top right, var(--text-primary) 0%, #82B3BE 25%, #278EBE 50%, #097AAF 75%, #020D8C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* 
+Arrow Indicator Styles
+Animation was created by claude
+*/
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  transform: translateY(5px);
+}
+
+.arrow-svg {
+  transform: rotate(-90deg);
+}
+
+.arrow-path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+}
+
+.arrow-path-1 {
+  animation: draw-arrow 1.5s ease-in-out infinite;
+}
+
+.arrow-path-2 {
+  animation: draw-arrow 1.5s ease-in-out 0.25s infinite;
+}
+
+@keyframes draw-arrow {
+  0% {
+    stroke-dashoffset: 60;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60%, 100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
 }
 
 /* Dark Light Slider Styles*/
@@ -694,5 +747,9 @@ input:checked + .slider:before {
 
   .hidden {
     display: none;
+  }
+
+  .scroll-indicator {
+    display: flex; 
   }
 }
