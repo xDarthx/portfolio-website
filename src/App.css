@@ -749,7 +749,11 @@ input:checked + .slider:before {
     display: none;
   }
 
+
+}
+
+@media (max-width: 625px) {
   .scroll-indicator {
-    display: flex; 
+    display: none; 
   }
 }

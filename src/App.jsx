@@ -198,7 +198,7 @@ function App() {
               </p>
             </article>
             <div className="scroll-indicator" onClick={scrollToContent}>
-              <svg width="40" height="60" viewBox="0 0 40 60" className="arrow-svg">
+              <svg width="60" height="80" viewBox="0 0 40 60" className="arrow-svg">
                 <path 
                   className="arrow-path arrow-path-1" 
                   d="M20 15 L5 30 L20 45" 
