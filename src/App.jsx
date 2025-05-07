@@ -32,20 +32,6 @@ function App() {
       fullDesc: "This was a team project in my game programming class. Each member of the team was tasked with creating a level, the gif only shows the level I created. The game was made using Unity and I helped create the interaction feature and the attack system.",
       githubUrl: "https://github.com/xDarthx/GameDev_TP1",
       videoSrc: "./teamPlatformerProject.gif"
-    },
-    {
-      id: 5,
-      title: "Placeholder",
-      fullDesc: "This is a placeholder for another project",
-      githubUrl: "",
-      videoSrc: ""
-    },
-    {
-      id: 6,
-      title: "Placeholder",
-      fullDesc: "This is a placeholder for another project",
-      githubUrl: "",
-      videoSrc: ""
     }
   ]
 
@@ -157,10 +143,6 @@ function App() {
     return (
       <div className="tech-item">
         <div className="tech-header">
-          {/* The icons was cool but it was too much of a pain to remake the svg file */}
-          {/* <svg width="50" height="50">
-            <use href={`./technology-icons.svg#${iconId}`} />
-          </svg> */}
           <div className="tech-name">{tech.name}</div>
           <div className="tech-proficiency">{tech.proficiency}%</div>
         </div>
