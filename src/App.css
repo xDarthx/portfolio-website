@@ -404,6 +404,15 @@ input:checked + .slider:before {
   cursor: default;
 }
 
+.modal-iframe {
+  width: 100%;
+  height: 400px; 
+  min-height: 300px; 
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0; 
+}
+
 .modal-content {
   background-color: var(--bg-secondary);
   border-radius: 10px;
@@ -745,15 +754,25 @@ input:checked + .slider:before {
     font-size: 3vw;
   }
 
+  .modal-iframe {
+    height: 300px;
+    min-height: 250px;
+  }
+
   .hidden {
     display: none;
   }
-
-
 }
 
 @media (max-width: 625px) {
   .scroll-indicator {
     display: none; 
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-iframe {
+    height: 250px;
+    min-height: 200px;
   }
 }

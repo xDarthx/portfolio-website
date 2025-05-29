@@ -32,6 +32,13 @@ function App() {
       fullDesc: "This was a team project in my game programming class. Each member of the team was tasked with creating a level, the gif only shows the level I created. The game was made using Unity and I helped create the interaction feature and the attack system.",
       githubUrl: "https://github.com/xDarthx/GameDev_TP1",
       videoSrc: "./teamPlatformerProject.gif"
+    },
+    {
+      id: 5,
+      title: "Fairgrounds Project",
+      fullDesc: "This is a contract project that I did working with the metropolitan library. It is about the old part of town in oklahoma city The Fairgrounds District. This website is to help see the 3D model of what the town looked like and the whole goal is to reserve the history. Languages used in this are Three.js, HTML & CSS, and javascript.",
+      githubUrl: "https://github.com/DEVlimited/virtual-fairgrounds-web",
+      iframeSrc: "https://mls.devlimited.org/"
     }
   ]
 
@@ -102,47 +109,61 @@ function App() {
     )
   };
 
-  function ProjectModal({ project, onClose, isClosing }) {
-    return (
-      <>
+function ProjectModal({ project, onClose, isClosing }) {
+  return (
+    <>
+      <div 
+        className={`modal-backdrop ${isClosing ? 'closing' : ''}`}
+        onClick={onClose}
+      >
         <div 
-          className={`modal-backdrop ${isClosing ? 'closing' : ''}`}
-          onClick={onClose}
+          className={`modal-content ${isClosing ? 'closing' : ''}`}
+          onClick={e => e.stopPropagation()}
         >
-          <div 
-            className={`modal-content ${isClosing ? 'closing' : ''}`}
-            onClick={e => e.stopPropagation()}
+           <button 
+            className="modal-close-btn"
+            onClick={onClose}
           >
-             <button 
-              className="modal-close-btn"
-              onClick={onClose}
-            >
-              <X size={24} />
-            </button>
-            <div className="modal-body">
-              <h2 className="modal-title">{project.title}</h2>
-              <div className="modal-video-container">
-              <img className="modal-video" src={project.videoSrc} alt={`${project.title} demonstration`} />
-              </div>
-              <div className="modal-description">
-                <h3 className="modal-subtitle">About this project</h3>
-                <p>{project.fullDesc}</p>
-              </div>
-              <a 
-                href={project.githubUrl} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="github-link"
-              >
-                <Github size={20} className="github-icon" />
-                View on GitHub
-              </a>
+            <X size={24} />
+          </button>
+          <div className="modal-body">
+            <h2 className="modal-title">{project.title}</h2>
+            <div className="modal-video-container">
+              {project.iframeSrc ? (
+                <iframe 
+                  src={project.iframeSrc}
+                  title={`${project.title} live demonstration`}
+                  className="modal-iframe"
+                  frameBorder="0"
+                  allowFullScreen
+                />
+              ) : (
+                <img 
+                  className="modal-video" 
+                  src={project.videoSrc} 
+                  alt={`${project.title} demonstration`} 
+                />
+              )}
             </div>
+            <div className="modal-description">
+              <h3 className="modal-subtitle">About this project</h3>
+              <p>{project.fullDesc}</p>
+            </div>
+            <a 
+              href={project.githubUrl} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="github-link"
+            >
+              <Github size={20} className="github-icon" />
+              View on GitHub
+            </a>
           </div>
         </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
+}
 
   function TechnologyItem({ tech }) {
     const iconId = tech.icon.replace('.svg', '');
