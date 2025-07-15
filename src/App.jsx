@@ -14,10 +14,11 @@ function App() {
     },
     {
       id: 2,
-      title: "Memory Game",
-      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
-      githubUrl: "https://github.com/xDarthx/react-memory-game",
-      videoSrc: "./memoryProject.gif"
+      title: "Fairgrounds Project",
+      fullDesc: "This is a contract project that I did working with the metropolitan library. It is about the old part of town in oklahoma city The Fairgrounds District. This website is to help see the 3D model of what the town looked like and the whole goal is to reserve the history. Languages used in this are Three.js, HTML & CSS, and javascript.",
+      githubUrl: "https://github.com/DEVlimited/virtual-fairgrounds-web",
+      videoSrc: "./fairgroundsProject.png",
+      iframeSrc: "https://mls.devlimited.org/"
     },
     {
       id: 3,
@@ -35,10 +36,10 @@ function App() {
     },
     {
       id: 5,
-      title: "Fairgrounds Project",
-      fullDesc: "This is a contract project that I did working with the metropolitan library. It is about the old part of town in oklahoma city The Fairgrounds District. This website is to help see the 3D model of what the town looked like and the whole goal is to reserve the history. Languages used in this are Three.js, HTML & CSS, and javascript.",
-      githubUrl: "https://github.com/DEVlimited/virtual-fairgrounds-web",
-      iframeSrc: "https://mls.devlimited.org/"
+      title: "Memory Game",
+      fullDesc: "This project is a memory game, it was a project on Odin-Project. The basis of it is that there are a bunch of different images and you are trying to hit a different one each time. The tech used is React and Javascript.",
+      githubUrl: "https://github.com/xDarthx/react-memory-game",
+      videoSrc: "./memoryProject.gif"
     }
   ]
 
