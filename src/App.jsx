@@ -215,7 +215,7 @@ function ProjectModal({ project, onClose, isClosing }) {
             <article id='aboutMe'>
               <h1>Jacob Grant</h1>
               <p>
-                Hello! Welcome to my portfolio website, I am currently a Sophmore in College.
+                Hello! Welcome to my portfolio website, I am currently a Junior in College.
                 I am studying for a bachelors in computer science and minor in cybersecurity.
               </p>
             </article>
@@ -371,7 +371,7 @@ function ProjectModal({ project, onClose, isClosing }) {
               <img id='profileImg' src='./jacobGrant.jpg'/>
               <article>
                 <p>
-                  I am a Sophmore at <b>Oklahoma City University</b>,
+                  I am a Junior at <b>Oklahoma City University</b>,
                   <br />
                   <br />
                   and I am currently studying for a bachelors in Computer Science with a Cybersecurity minor.
